@@ -46,17 +46,18 @@ function bubbleSort(txt1arr) {
   xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       txt1 = xmlhttp.responseText
-      txt1arr = txt1.split(",")
-      for (let i = 0; i < txt1arr.length; i++) {
-        for (let j = 0; j < txt1arr.length - i; j++) {
-          if (parseInt(txt1arr[j]) > parseInt(txt1arr[j + 1])) {
-            tmp = txt1arr[j];
-            txt1arr[j] = txt1arr[j + 1];
-            txt1arr[j + 1] = tmp;
-          }
-        }
-        output.innerHTML += "<br>Txt2 Bubble Sort<br><br>" + txt1arr + "<br>---------------------------------------------------------------------------------------------<br>";
+      txt1arr = txt1.split(",");
+      var length = txt1arr.length;  
+      for (var i = 0; i < length; i++) { 
+            for (var j = 0; j < (length - i - 1); j++) { 
+                     if(parseInt(txt1arr[j]) > parseInt(txt1arr[j+1])) {
+                             var tmp = txt1arr[j]; 
+                  txt1arr[j] = txt1arr[j+1]; 
+                  txt1arr[j+1] = tmp; 
+              }
+          }        
       }
+      output.innerHTML += "<br>Txt1 Bubble Sort<br><br>" + txt1arr + "<br><br>";
     }
   };
   xmlhttp.open("GET", "unsorted_file1.txt", true);
@@ -78,7 +79,7 @@ function doInsertions(txt2arr) {
         }
         txt2arr[j + 1] = current;
       }
-      output.innerHTML += "<br>Txt2 Insertions Sort<br><br>" + txt2arr + "<br>---------------------------------------------------------------------------------------------<br>";
+      output.innerHTML += "<br>Txt2 Insertions Sort<br><br>" + txt2arr + "<br><br>";
     }
   }
   xmlhttp.open("GET", "unsorted_file2.txt", true);
