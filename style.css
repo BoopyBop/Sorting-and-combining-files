@@ -1,0 +1,15 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#output {
+  position: absolute;
+  left: 650px;
+  top: 100px;
+  width: 600px;
+  height: 600px;
+  overflow: auto;
+  border: 2px solid black;
+}
+
